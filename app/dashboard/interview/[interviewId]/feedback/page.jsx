@@ -49,7 +49,7 @@ function Feedback({ params }) {
             Find below interview question with correct answe, Your answer and
             feedback for improvement
           </h2>
-          {/* {feedbackList &&
+          {feedbackList &&
         feedbackList.map((item, index) => (
           <Collapsible key={index} className="mt-7">
             <CollapsibleTrigger className="p-2 bg-secondary rounded-lg my-2 text-left flex justify-between gap-10  w-full">
@@ -76,7 +76,7 @@ function Feedback({ params }) {
               </div>
             </CollapsibleContent>
           </Collapsible>
-        ))} */}
+        ))}
         </>
       )}
       <Button onClick={() => router.replace("/dashboard")}>Go Home</Button>
