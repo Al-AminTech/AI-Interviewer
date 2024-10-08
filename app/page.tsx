@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Header from "./dashboard/_component/Header";
 
+
 export default function Home() {
   return (
     <div className="px-10 md:px-28 lg:px-44 mt-10">

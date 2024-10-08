@@ -1,11 +1,13 @@
 "use client"
-import { UserButton } from '@clerk/nextjs'
+import { UserButton, useUser } from '@clerk/nextjs'
 import Image from 'next/image'
 import React from 'react'
 import { usePathname } from 'next/navigation'
+import Link from 'next/link'
 
 function Header() {
   const pathname = usePathname() 
+  const {user} = useUser();
 
   const MenuList = [
     { name: 'Dashboard', path: '/dashboard' },
@@ -30,7 +32,15 @@ function Header() {
         ))}
       </ul>
       
-      <UserButton />
+      {user ? (
+        <UserButton />
+      ) : (
+        <Link href="/dashboard">
+          <button className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition">
+            Get Started
+          </button>
+        </Link>
+      )}
     </div>
   )
 }
